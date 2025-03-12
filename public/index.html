@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Textové záznamy</title>
+    <script defer src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        input, select, button { margin: 5px; padding: 10px; }
+        .note { border: 1px solid #ccc; padding: 10px; margin: 5px; }
+    </style>
+    <head>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+</head>
+<body>
+    <h1>Správa záznamů</h1>
+
+    <label>Kategorie:</label>
+    <select id="category">
+        <option value="vtip">Vtip</option>
+        <option value="citát">Citát</option>
+        <option value="úkol">Úkol</option>
+    </select>
+
+    <input type="text" id="text" placeholder="Zadej text">
+    <button onclick="addNote()">Přidat</button>
+
+    <h2>Seznam záznamů</h2>
+    <input type="text" id="search" placeholder="Hledat..." oninput="fetchNotes()">
+    <select id="filterCategory" onchange="fetchNotes()">
+        <option value="">Všechny kategorie</option>
+        <option value="vtip">Vtip</option>
+        <option value="citát">Citát</option>
+        <option value="úkol">Úkol</option>
+    </select>
+
+    <div id="notes"></div>
+</body>
+</html>
